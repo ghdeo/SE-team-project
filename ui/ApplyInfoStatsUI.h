@@ -4,10 +4,10 @@
 
 using namespace std;
 
-class SearchApplyInfo
+class ApplyInfoStatsUI
 {
 private:
 
 public:
-    bool showApplyInfo();
+    bool selectApplyInfoStats();
 };

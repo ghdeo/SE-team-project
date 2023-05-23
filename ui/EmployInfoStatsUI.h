@@ -1,13 +1,14 @@
 #pragma once
 
+
 #include <iostream>
 
 using namespace std;
 
-class SearchApplyInfo
+class EmployInfoStatsUI
 {
 private:
 
 public:
-    bool showApplyInfo();
+    bool selectEmployInfoStats();
 };

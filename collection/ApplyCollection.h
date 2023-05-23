@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 
 #include "ApplyInfo.h"
@@ -14,5 +14,5 @@ public:
     bool getApplyInfo();
     bool deleteCancelApplyInfo(string);
     bool getApplyStats();
-    bool addApplyList(ApplyInfo);   // Á¦ ÆÄÆ®°¡ ¾Æ´Ï¶ó...
+    bool addApplyList(ApplyInfo);   // ì œ íŒŒíŠ¸ê°€ ì•„ë‹ˆë¼...
 };
