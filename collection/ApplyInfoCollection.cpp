@@ -6,13 +6,14 @@
 #include "ApplyInfoCollection.h"
 #include "ApplyInfo.h"
 
-#define INPUT_FILE_NAME "input.txt"
-#define OUTPUT_FILE_NAME "output.txt"
 
 ApplyInfoCollection* ApplyInfoCollection::instance = nullptr;
-/**
- * singleton 媛앹껜 ?앹꽦 諛?諛섑솚
-*/
+/*
+    함수 이름 : getInstance
+    기능    : singleton 객체 생성 및 반환
+    전달 인자: null
+    반환값  : ApplyInfoCollection*
+ */
 ApplyInfoCollection* ApplyInfoCollection::getInstance() {
     if (instance == nullptr) {
         instance = new ApplyInfoCollection();
@@ -21,15 +22,13 @@ ApplyInfoCollection* ApplyInfoCollection::getInstance() {
     return instance;
 }
 
-/**
- * 吏???뺣낫瑜?諛뷀깢?쇰줈 applyInfoList??吏?먯젙蹂????
-*/
+
 /*
-    함수 이름 : ApplyInfoCollection::addApplyInfo(ApplyInfo* applyInfo)
-    기능	  :
-    전달 인자 : 없음
-    반환값    : 없음
-*/
+    함수 이름 : addApplyInfo
+    기능    : 지원 정보를 바탕으로 applyInfoList에 지원정보 저장.
+    전달 인자: ApplyInfo*
+    반환값  : null
+ */
 void ApplyInfoCollection::addApplyInfo(ApplyInfo* applyInfo) {
     applyInfoList.push_back(std::pair<std::string, ApplyInfo*>(applyInfo->getApplicantName(), applyInfo)); // 吏?먯옄 ?대쫫, 吏?먯젙蹂????
 }
@@ -74,8 +73,7 @@ bool ApplyInfoCollection::deleteCancelApplyInfo(string bNum)
     {
         if (x->second.getBusinessNum() == bNum)
         {
-            outputFile << "> " << x->second.getCompanyName() << " " << x->second.getBusinessNum() << " " << x->second.getPosition() << endl;
-            applyInfoList.erase(x);
+            ownedApplyList.erase(x);
             return true;  // 삭제 성공
         }
     }
