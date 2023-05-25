@@ -14,10 +14,10 @@ bool ApplyInfoStatsUI::selectApplyInfoStats()
 	ApplyInfoStats applyInfoStats;
 
 	cout << "[지원 정보 통계]" << endl;
-    bool result = applyInfoStats.showApplyInfoStats();
+	bool result = applyInfoStats.showApplyInfoStats();
 
-    if (result) {   cout << "지원 정보 통계를 조회합니다." << endl; }
+	if (result) { cout << "지원 정보 통계를 조회합니다." << endl; }
 	else { cout << "조회할 지원 정보가 없습니다." << endl; }
 
-    return result;
+	return result;
 }

@@ -15,8 +15,8 @@ bool SearchApplyInfoUI::searchApplyInfo()
 	cout << "[지원 정보 조회]" << endl;
 	bool result = searchApplyInfo.showApplyInfo();
 
-	if (result)	{	cout << "지원 정보를 조회합니다." << endl;	}
-	else {	cout << "지원 정보를 조회할 수 없습니다." << endl;	}
+	if (result) { cout << "지원 정보를 조회합니다." << endl; }
+	else { cout << "지원 정보를 조회할 수 없습니다." << endl; }
 
 	return result;
 }
