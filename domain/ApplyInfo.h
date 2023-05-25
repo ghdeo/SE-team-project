@@ -16,7 +16,7 @@ private:
 
 public:
     ApplyInfo() {};     // 기본 생성자
-    ApplyInfo(string, string, string , int , string, string);   // 생성자
+    ApplyInfo(string, string, string, int, string, string);     // 생성자
     string getCompanyName() const;                              // 회사명
     string getBusinessNum() const;                              // 사업자번호
     string getPosition() const;                                 // 업무
@@ -24,3 +24,5 @@ public:
     string getFinishDate() const;                               // 마감일
     ~ApplyInfo();                                               // 소멸자
 };
+
+#endif

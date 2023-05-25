@@ -1,6 +1,4 @@
-﻿#include <string>
-#include "SearchApplyInfoUI.h"
-#include "SearchApplyInfo.h"
+﻿﻿#include "SearchApplyInfoUI.h"
 
 /*
 	함수 이름 : SearchApplyInfoUI
@@ -9,25 +7,25 @@
 	반환값    : null
  */
 SearchApplyInfoUI::SearchApplyInfoUI(ApplyInfoCollection* applyInfoCollection)
-	: searchApplyInfo(applyInfoCollection) {}
+	: searchApplyInfoControl(applyInfoCollection) {}
 
 
 
 /*
 	함수 이름 : SearchApplyInfoUI::searchApplyInfo()
-	기능	  : 일반 회원의 지원 정보 조회을 위한 UI 제공
+	기능	  : 일반 회원의 지원 정보 출력
 	전달 인자 : 없음
-	반환값    : Boolean
+	반환값    : vector<string>
 */
-bool SearchApplyInfoUI::searchApplyInfo()
-{
-	SearchApplyInfo searchApplyInfo;
+vector<string> SearchApplyInfoUI::searchApplyInfo() {
+	// 저장된 지원 정보 가져오기
+	vector<ApplyInfo> val = searchApplyInfoControl.showApplyInfo();
 
-	cout << "[지원 정보 조회]" << endl;
-	bool result = searchApplyInfo.showApplyInfo();
-
-	if (result) { cout << "지원 정보를 조회합니다." << endl; }
-	else { cout << "지원 정보를 조회할 수 없습니다." << endl; }
-
-	return result;
+	// 출력
+	vector<string> ret;
+	for (ApplyInfo info : val) {
+		string tmp = "" + info.getCompanyName() + " " + info.getBusinessNum() + " " + info.getPosition() + " "
+			+ to_string(info.getEmployedNum()) + " " + info.getFinishDate();
+	}
+	return ret;
 }

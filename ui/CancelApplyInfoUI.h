@@ -1,14 +1,16 @@
-﻿#pragma once
+﻿#include <iostream>
 
-#include <iostream>
+#include "CancelApplyInfoControl.h"
 
 using namespace std;
 
 class CancelApplyInfoUI
 {
 private:
-    CancelApplyInfo cancelapplyinfo;
+    CancelApplyInfoControl cancelApplyInfoControl;
 public:
-    CancelApplyInfoUI(ApplyInfoCollection* applyInfoCollection);    // 생성자 singletion 주입
-    bool cancelApplyInfoUI(string);     // 일반 회원의 지원 정보 삭제를 위한 UI 제공
+    CancelApplyInfoUI(ApplyInfoCollection* applyInfoCollection);    // Constructor
+    string cancelApplyInfoUI(string companyName);                   // 일반 회원의 지원 정보 삭제
 };
+
+#endif

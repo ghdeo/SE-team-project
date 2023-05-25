@@ -4,7 +4,7 @@
 /*
 	함수 이름 : ApplyInfo::ApplyInfo(string cNum, string bNum, string pos, int eNum, string finDate, stirng applycantName)
 	기능	  : Constructor
-	전달 인자 : 회사명, 사업자번호, 업무, 채용 인원, 마감일, 지원자
+	전달 인자 : 회사명, 사업자번호, 업무, 채용 인원, 마감일, 지원자명
 	반환값    : 없음
 */
 ApplyInfo::ApplyInfo(string cNum, string bNum, string pos, int eNum, string finDate, stirng applycantName)
@@ -62,7 +62,7 @@ string ApplyInfo::getFinishDate() const { return finishDate; }
 	함수 이름 : ApplyInfo::getApplicantName()
 	기능	  : 지원자명 반환
 	전달 인자 : 없음
-	반환값    : finishDate
+	반환값    : applicantName
 */
 string ApplyInfo::getApplicantName() const { return applicantName; }
 
@@ -75,5 +75,5 @@ string ApplyInfo::getApplicantName() const { return applicantName; }
 */
 ApplyInfo::~ApplyInfo()
 {
-	
+
 }

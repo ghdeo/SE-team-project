@@ -1,34 +1,55 @@
-﻿#include <string>
-#include <algorithm>
-#include <map>
+﻿#include "ApplyInfoCollection.h"
+#include "SessionCollection.h"
+#include "GeneralAccount.h"
 
-#include "ApplyCollection.h"
-#include "ApplyInfo.h"
+ApplyInfoCollection* ApplyInfoCollection::instance = nullptr;
+
+/**
+ * 함수 이름 : getInstance
+ * 기능    : singleton 객체 생성 및 반환
+ * 전달 인자: null
+ * 반환값  : ApplyInfoCollection*
+ */
+ApplyInfoCollection* ApplyInfoCollection::getInstance() {
+    if (instance == nullptr) {
+        instance = new ApplyInfoCollection();
+    }
+
+    return instance;
+}
+
+/**
+ * 함수 이름 : addApplyInfo
+ * 기능    : 지원 정보를 바탕으로 applyInfoList에 지원정보 저장.
+ * 전달 인자: ApplyInfo*
+ * 반환값  : null
+ */
+void ApplyInfoCollection::addApplyInfo(ApplyInfo* applyInfo) {
+    applyInfoList.push_back(pair<string, ApplyInfo*>(applyInfo->getApplicantName(), applyInfo)); // 지원자 이름, 지원정보 저장.
+}
 
 /*
     함수 이름 : ApplyCollection::getApplyInfo()
-    기능	  : 지원 정보를 회사 이름을 기준으로 정렬하여 전부 출력
+    기능	  : 지원 정보 조회
     전달 인자 : 없음
-    반환값    : Boolean
+    반환값    : vector<ApplyInfo>
 */
-bool ApplyCollection::getApplyInfo() {
+vector<ApplyInfo> ApplyInfoCollection::getApplyInfo() {
+    SessionCollection* instance = SessionCollection::getInstance();
     
-    // 회사 이름 기준으로 정렬
-        sort(ownedApplyList.begin(), ownedApplyList.end(), [](const pair<string, ApplyInfo>& former, const pair<string, ApplyInfo>& latter)
-            {
-                return former.second.getCompanyName() < latter.second.getCompanyName();
-            }
-        );
+    // Session: 일반 회원의 계정 정보
+    GeneralAccount* account = static_cast<GeneralAccount*> (instance->getSession()->getAccount());
+    string accountName = account->getName();
 
-    if (ownedApplyList.empty()) { return false; }
-
-    for (const auto& apply : ownedApplyList)
-    {
-        ApplyInfo applyInfo = apply.second;
-        cout << applyInfo.getCompanyName() << " " << applyInfo.getBusinessNum() << " " << applyInfo.getPosition() << " " << applyInfo.getEmployedNum() << " " << applyInfo.getFinishDate() << endl;
+    // 일반 회원의 지원 정보 저장
+    vector<ApplyInfo> applyInfo;
+    for (pair<string, ApplyInfo*> v : applyInfoList) {
+        if (v.first == accountName) {
+            ret.push_back(*v.second);
+        }
     }
 
-    return true;
+    return applyInfo;
 }
 
 
@@ -36,70 +57,39 @@ bool ApplyCollection::getApplyInfo() {
     함수 이름 : ApplyCollection::deleteCancelApplyInfo(string bNum)
     기능	  : 지원 정보 삭제
     전달 인자 : 없음
-    반환값    : Boolean
+    반환값    : 없음
 */
-bool ApplyCollection::deleteCancelApplyInfo(string bNum)
-{
-    for (auto x = ownedApplyList.begin(); x != ownedApplyList.end(); ++x)
-    {
-        if (x->second.getBusinessNum() == bNum)
-        {
-            ownedApplyList.erase(x);
-            return true;  // 삭제 성공
+void ApplyInfoCollection::deleteCancelApplyInfo(string businessNumber) {
+    SessionCollection* instance = SessionCollection::getInstance();
+
+    // Session: 일반 회원의 계정 정보
+    GeneralAccount* account = static_cast<GeneralAccount*> (instance->getSession()->getAccount());
+    string accountName = account->getName();
+
+    // 사업자 번호로 검색하여 지원 정보 삭제
+    for (auto x = applyInfoList.begin(); x != applyInfoList.end(); ++x) {
+        if (x->second->getBusinessNum() == businessNumber) {
+            applyInfoList.erase(x);
         }
     }
 
-    // 지원 정보를 찾지 못하여 삭제 실패
-    return false;
 }
 
 
 /*
     함수 이름 : ApplyCollection::getApplyStats()
-    기능	  : 지원한 모든 지원 정보에 대해 지원 업무별 지원 횟수를 출력(지원 정보 통계)
+    기능	  : 지원한 모든 지원 정보에 대해 지원 업무별 지원 횟수를 저장(지원 정보 통계)
     전달 인자 : 없음
-    반환값    : Boolean
+    반환값    : map<string, int>
 */
-bool ApplyCollection::getApplyStats()
-{
-    // 업무별 지원 횟수 저장
-    map<string, int> applyStats;    // key: 업무, value: 지원 횟수
+map<string, int> ApplyInfoCollection::getApplyStats() {
+    map<string, int> applyStats;    // 지원 정보 통계 정보를 저장하는 vector
 
-    for (const auto& apply : ownedApplyList)
-    {
-        string pos = apply.second.getPosition();
-
-        // 이미 등록된 업무
-        if (applyStats.count(pos) > 0)
-        {
-            applyStats[pos]++;
-        }
-        // 새로운 업무
-        else
-        {
-            applyStats[pos] = 1;
-        }
+    // 업무를 기준으로 지원 정보 통계 정보 저장
+    for (const auto& apply : applyInfoList) {
+        string pos = apply.second->getPosition();
+        applyStats[pos]++;
     }
 
-    // 업무별 지원 횟수를 출력
-    if (applyStats.empty())
-    {
-        return false;
-    }
-    else
-    {
-        for (const auto& stats : applyStats)
-        {
-            cout << stats.first << " " << stats.second << endl;
-        }
-        return true;
-    }
+    return applyStats;
 }
-
-/*
-    함수 이름 : ApplyCollection::addApplyList(ApplyInfo)
-    기능	  :
-    전달 인자 : 없음
-    반환값    : 없음
-*/
-// bool ApplyCollection::addApplyList(ApplyInfo) { }

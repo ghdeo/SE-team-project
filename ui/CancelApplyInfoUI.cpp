@@ -1,31 +1,36 @@
-﻿#include <string>
+﻿﻿#include <string>
+
 #include "CancelApplyInfoUI.h"
-#include "CancelApplyInfo.h"
+#include "CancelApplyInfoControl.h"
+#include "ApplyInfoCollection.h"
+#include "EmployInfoCollection.h"
 
 /*
     함수 이름 : CancelApplyInfoUI
-    기능	  : singleton인 ApplyInfoCollection 주입하는 생성자.
+    기능	  : singleton인 ApplyInfoCollection 주입하는 생성자
     전달 인자 : ApplyInfoCollection*
     반환값    : null
  */
-CancelApplyInfoUI::CancelApplyInfoUI(ApplyInfoCollection* applyInfoCollection);
-    : cancelApplyInfoUI(applyInfoCollection) {}
+CancelApplyInfoUI::CancelApplyInfoUI(ApplyInfoCollection* applyInfoCollection)
+    : cancelApplyInfoControl(applyInfoCollection) {}
+
 
 /*
-    함수 이름 : CancelApplyInfoUI::cancelApplyInfoUI(string bNum)
-    기능	  : 일반 회원의 지원 정보 삭제를 위한 UI 제공
+    함수 이름 : CancelApplyInfoUI::cancelApplyInfoUI(string companyNum)
+    기능	  : 일반 회원의 지원 정보 삭제
     전달 인자 : 없음
-    반환값    : Boolean
+    반환값    : string
 */
-bool CancelApplyInfoUI::cancelApplyInfoUI(string bNum)
-{
-    CancelApplyInfo cancelApplyInfo;
+string CancelApplyInfoUI::cancelApplyInfoUI(string companyNum) {
+    // 사업자 번호 받아서 삭제
+    cancelApplyInfoControl.cancelApplyInfo(companyNum);
 
-    cout << "[지원 정보 삭제]" << endl;
-    bool result = cancelApplyInfo.cancelApplyInfo(bNum);
+    // 사업자 번호를 이용하여 채용 정보에서 검색
+    EmployInfoCollection* instance = EmployInfoCollection::getInstance();
+    EmployInfo info = instance->getEmployInfoByBusinessNum(companyNum);
 
-    if (result) { cout << "해당 지원 정보가 취소되었습니다." << endl; }
-    else { cout << "취소할 지원 정보를 찾을 수 없습니다." << endl; }
+    // 해당 채용 정보 출력
+    string result = "" + info.getCompanyName() + " " + info.getBusinessNum() + " " + info.getPosition();
 
     return result;
 }
