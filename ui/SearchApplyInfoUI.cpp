@@ -1,22 +1,22 @@
-#include <string>
+ï»¿#include <string>
 #include "SearchApplyInfoUI.h"
 #include "SearchApplyInfo.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : SearchApplyInfoUI::searchApplyInfo()
-	±â´É	  : ÀÏ¹İ È¸¿øÀÇ Áö¿ø Á¤º¸ Á¶È¸À» À§ÇÑ UI Á¦°ø
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : Boolean
+	í•¨ìˆ˜ ì´ë¦„ : SearchApplyInfoUI::searchApplyInfo()
+	ê¸°ëŠ¥	  : ì¼ë°˜ íšŒì›ì˜ ì§€ì› ì •ë³´ ì¡°íšŒì„ ìœ„í•œ UI ì œê³µ
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : Boolean
 */
 bool SearchApplyInfoUI::searchApplyInfo()
 {
 	SearchApplyInfo searchApplyInfo;
 
-	cout << "[Áö¿ø Á¤º¸ Á¶È¸]" << endl;
+	cout << "[ì§€ì› ì •ë³´ ì¡°íšŒ]" << endl;
 	bool result = searchApplyInfo.showApplyInfo();
 
-	if (result)	{	cout << "Áö¿ø Á¤º¸¸¦ Á¶È¸ÇÕ´Ï´Ù." << endl;	}
-	else {	cout << "Áö¿ø Á¤º¸¸¦ Á¶È¸ÇÒ ¼ö ¾ø½À´Ï´Ù." << endl;	}
+	if (result)	{	cout << "ì§€ì› ì •ë³´ë¥¼ ì¡°íšŒí•©ë‹ˆë‹¤." << endl;	}
+	else {	cout << "ì§€ì› ì •ë³´ë¥¼ ì¡°íšŒí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤." << endl;	}
 
 	return result;
 }

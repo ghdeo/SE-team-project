@@ -1,22 +1,20 @@
-#include <string>
+ï»¿#include <string>
 
 #include "CancelApplyInfo.h"
 #include "ApplyCollection.h"
 #include "SessionCollection.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : CancelApplyInfo::cancelApplyInfo(string bNum)
-	±â´É	  : ÀÏ¹İ È¸¿øÀÇ Áö¿ø Á¤º¸ »èÁ¦
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : Boolean
+	í•¨ìˆ˜ ì´ë¦„ : CancelApplyInfo::cancelApplyInfo(string bNum)
+	ê¸°ëŠ¥	  : ì¼ë°˜ íšŒì›ì˜ ì§€ì› ì •ë³´ ì‚­ì œ
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : Boolean
 */
 bool CancelApplyInfo::cancelApplyInfo(string bNum)
 {
-	// Session
-
     ApplyCollection applyCollection;
 
-	// Áö¿ø Á¤º¸ »èÁ¦
-	// »èÁ¦ °¡´ÉÇÑ °æ¿ì¿¡ true, ºÒ°¡´ÉÇÑ °æ¿ì¿¡ false ¹İÈ¯
+	// ì§€ì› ì •ë³´ ì‚­ì œ
+	// ì‚­ì œ ê°€ëŠ¥í•œ ê²½ìš°ì— true, ë¶ˆê°€ëŠ¥í•œ ê²½ìš°ì— false ë°˜í™˜
     return applyCollection.deleteCancelApplyInfo(bNum);
 }

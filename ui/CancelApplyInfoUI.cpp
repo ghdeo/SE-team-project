@@ -1,22 +1,22 @@
-#include <string>
+ï»¿#include <string>
 #include "CancelApplyInfoUI.h"
 #include "CancelApplyInfo.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : CancelApplyInfoUI::cancelApplyInfoUI(string bNum)
-	±â´É	  : ÀÏ¹İ È¸¿øÀÇ Áö¿ø Á¤º¸ »èÁ¦¸¦ À§ÇÑ UI Á¦°ø
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : Boolean
+	í•¨ìˆ˜ ì´ë¦„ : CancelApplyInfoUI::cancelApplyInfoUI(string bNum)
+	ê¸°ëŠ¥	  : ì¼ë°˜ íšŒì›ì˜ ì§€ì› ì •ë³´ ì‚­ì œë¥¼ ìœ„í•œ UI ì œê³µ
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : Boolean
 */
 bool CancelApplyInfoUI::cancelApplyInfoUI(string bNum)
 {
     CancelApplyInfo cancelApplyInfo;
 
-    cout << "[Áö¿ø Á¤º¸ »èÁ¦]" << endl;
+    cout << "[ì§€ì› ì •ë³´ ì‚­ì œ]" << endl;
     bool result = cancelApplyInfo.cancelApplyInfo(bNum);
 
-    if (result) {   cout << "ÇØ´ç Áö¿ø Á¤º¸°¡ Ãë¼ÒµÇ¾ú½À´Ï´Ù." << endl;   }
-    else {  cout << "Ãë¼ÒÇÒ Áö¿ø Á¤º¸¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù." << endl;    }
+    if (result) {   cout << "í•´ë‹¹ ì§€ì› ì •ë³´ê°€ ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤." << endl;   }
+    else {  cout << "ì·¨ì†Œí•  ì§€ì› ì •ë³´ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤." << endl;    }
 
     return result;
 }

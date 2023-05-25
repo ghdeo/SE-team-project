@@ -1,11 +1,11 @@
-#include <string>
+ï»¿#include <string>
 #include "ApplyInfo.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ApplyInfo::ApplyInfo(string cNum, string bNum, string pos, int eNum, string finDate)
-	±â´É	  : Constructor
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : ApplyInfo::ApplyInfo(string cNum, string bNum, string pos, int eNum, string finDate)
+	ê¸°ëŠ¥	  : Constructor
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 ApplyInfo::ApplyInfo(string cNum, string bNum, string pos, int eNum, string finDate)
 	:companyName(cNum), businessNum(bNum), position(pos), employedNum(eNum), finishDate(finDate)
@@ -15,54 +15,54 @@ ApplyInfo::ApplyInfo(string cNum, string bNum, string pos, int eNum, string finD
 
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ApplyInfo::getCompanyName()
-	±â´É	  : È¸»ç¸í ¹İÈ¯
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : companyName
+	í•¨ìˆ˜ ì´ë¦„ : ApplyInfo::getCompanyName()
+	ê¸°ëŠ¥	  : íšŒì‚¬ëª… ë°˜í™˜
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : companyName
 */
 string ApplyInfo::getCompanyName() const { return companyName; }
 
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ApplyInfo::getBusinessNum()
-	±â´É	  : »ç¾÷ÀÚ¹øÈ£ ¹İÈ¯
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : businessNum
+	í•¨ìˆ˜ ì´ë¦„ : ApplyInfo::getBusinessNum()
+	ê¸°ëŠ¥	  : ì‚¬ì—…ìë²ˆí˜¸ ë°˜í™˜
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : businessNum
 */
 string ApplyInfo::getBusinessNum() const { return businessNum; }
 
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ApplyInfo::getPosition()
-	±â´É	  : ¾÷¹« ¹İÈ¯
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : position
+	í•¨ìˆ˜ ì´ë¦„ : ApplyInfo::getPosition()
+	ê¸°ëŠ¥	  : ì—…ë¬´ ë°˜í™˜
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : position
 */
 string ApplyInfo::getPosition() const { return position; }
 
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ApplyInfo::getEmployedNum()
-	±â´É	  : Ã¤¿ë ÀÎ¿ø ¹İÈ¯
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : employedNum
+	í•¨ìˆ˜ ì´ë¦„ : ApplyInfo::getEmployedNum()
+	ê¸°ëŠ¥	  : ì±„ìš© ì¸ì› ë°˜í™˜
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : employedNum
 */
 int ApplyInfo::getEmployedNum() const { return employedNum; }
 
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ApplyInfo::getFinishDate()
-	±â´É	  : ¸¶°¨ÀÏ ¹İÈ¯
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : finishDate
+	í•¨ìˆ˜ ì´ë¦„ : ApplyInfo::getFinishDate()
+	ê¸°ëŠ¥	  : ë§ˆê°ì¼ ë°˜í™˜
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : finishDate
 */
 string ApplyInfo::getFinishDate() const { return finishDate; }
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ApplyInfo::~ApplyInfo()
-	±â´É	  : Destructor
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : ApplyInfo::~ApplyInfo()
+	ê¸°ëŠ¥	  : Destructor
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 ApplyInfo::~ApplyInfo()
 {

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <iostream>
 
@@ -7,19 +7,19 @@ using namespace std;
 class ApplyInfo
 {
 private:
-    string companyName; // È¸»ç ÀÌ¸§      // not null
-    string businessNum; // »ç¾÷ÀÚ¹øÈ£     // not null
-    string position;    // ¾÷¹«           // not null
-    int employedNum;    // Ã¤¿ë ÀÎ¿ø      // not null
-    string finishDate;  // ¸¶°¨ÀÏ         // not null
+    string companyName; // íšŒì‚¬ ì´ë¦„      // not null
+    string businessNum; // ì‚¬ì—…ìë²ˆí˜¸     // not null
+    string position;    // ì—…ë¬´           // not null
+    int employedNum;    // ì±„ìš© ì¸ì›      // not null
+    string finishDate;  // ë§ˆê°ì¼         // not null
 
 public:
-    ApplyInfo() {};     // ±âº» »ı¼ºÀÚ?
-    ApplyInfo(string, string, string , int , string);
-    string getCompanyName() const;
-    string getBusinessNum() const;
-    string getPosition() const;
-    int getEmployedNum() const;
-    string getFinishDate() const;
+    ApplyInfo() {};     // ê¸°ë³¸ ìƒì„±ì
+    ApplyInfo(string, string, string , int , string);   // ìƒì„±ì
+    string getCompanyName() const;                      // íšŒì‚¬ëª…
+    string getBusinessNum() const;                      // ì‚¬ì—…ìë²ˆí˜¸
+    string getPosition() const;                         // ì—…ë¬´
+    int getEmployedNum() const;                         // ì±„ìš© ì¸ì›
+    string getFinishDate() const;                       // ë§ˆê°ì¼
     ~ApplyInfo();
 };

@@ -1,11 +1,11 @@
-#include <string>
+ï»¿#include <string>
 #include "EmployInfoStatsUI.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : 
-	±â´É	  : 
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : ¾øÀ½
+	í•¨ìˆ˜ ì´ë¦„ : 
+	ê¸°ëŠ¥	  : 
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : ì—†ìŒ
 */
 bool EmployInfoStatsUI::selectEmployInfoStats()
 {

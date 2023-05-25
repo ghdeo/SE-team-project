@@ -12,13 +12,13 @@
     반환값    : Boolean
 */
 bool ApplyCollection::getApplyInfo() {
-    
+
     // 회사 이름 기준으로 정렬
-        sort(ownedApplyList.begin(), ownedApplyList.end(), [](const pair<string, ApplyInfo>& former, const pair<string, ApplyInfo>& latter)
-            {
-                return former.second.getCompanyName() < latter.second.getCompanyName();
-            }
-        );
+    sort(ownedApplyList.begin(), ownedApplyList.end(), [](const pair<string, ApplyInfo>& former, const pair<string, ApplyInfo>& latter)
+        {
+            return former.second.getCompanyName() < latter.second.getCompanyName();
+        }
+    );
 
     if (ownedApplyList.empty()) { return false; }
 

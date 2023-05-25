@@ -1,23 +1,23 @@
-#include <string>
+ï»¿#include <string>
 
 #include "ApplyInfoStatsUI.h"
 #include "ApplyInfoStats.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ApplyInfoStatsUI::selectEmployInfoStats()
-	±â´É	  : ÀÏ¹İ È¸¿øÀÇ Áö¿ø Á¤º¸ Åë°è Ãâ·ÂÀ» À§ÇÑ UI Á¦°ø
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : Boolean
+	í•¨ìˆ˜ ì´ë¦„ : ApplyInfoStatsUI::selectEmployInfoStats()
+	ê¸°ëŠ¥	  : ì¼ë°˜ íšŒì›ì˜ ì§€ì› ì •ë³´ í†µê³„ ì¶œë ¥ì„ ìœ„í•œ UI ì œê³µ
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : Boolean
 */
 bool ApplyInfoStatsUI::selectApplyInfoStats()
 {
 	ApplyInfoStats applyInfoStats;
 
-	cout << "[Áö¿ø Á¤º¸ Åë°è]" << endl;
+	cout << "[ì§€ì› ì •ë³´ í†µê³„]" << endl;
     bool result = applyInfoStats.showApplyInfoStats();
 
-    if (result) {   cout << "Áö¿ø Á¤º¸ Åë°è¸¦ Á¶È¸ÇÕ´Ï´Ù." << endl; }
-	else { cout << "Á¶È¸ÇÒ Áö¿ø Á¤º¸°¡ ¾ø½À´Ï´Ù." << endl; }
+    if (result) {   cout << "ì§€ì› ì •ë³´ í†µê³„ë¥¼ ì¡°íšŒí•©ë‹ˆë‹¤." << endl; }
+	else { cout << "ì¡°íšŒí•  ì§€ì› ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤." << endl; }
 
     return result;
 }

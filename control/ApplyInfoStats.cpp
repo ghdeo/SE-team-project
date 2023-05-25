@@ -1,22 +1,20 @@
-#include <string>
+ï»¿#include <string>
 
 #include "ApplyInfoStats.h"
 #include "ApplyCollection.h"
 #include "SessionCollection.h"
 
 /*
-	ÇÔ¼ö ÀÌ¸§ : ApplyInfoStats::showEmployInfoStats()
-	±â´É	  : ÀÏ¹İ È¸¿øÀÇ Áö¿ø Á¤º¸ Åë°è Ãâ·Â
-	Àü´Ş ÀÎÀÚ : ¾øÀ½
-	¹İÈ¯°ª    : Boolean
+	í•¨ìˆ˜ ì´ë¦„ : ApplyInfoStats::showEmployInfoStats()
+	ê¸°ëŠ¥	  : ì¼ë°˜ íšŒì›ì˜ ì§€ì› ì •ë³´ í†µê³„ ì¶œë ¥
+	ì „ë‹¬ ì¸ì : ì—†ìŒ
+	ë°˜í™˜ê°’    : Boolean
 */
 bool ApplyInfoStats::showApplyInfoStats()
 {
-	// Session
-
     ApplyCollection applyCollection;
 
-	// Áö¿ø Á¤º¸ Åë°è Á¶È¸
-	// Á¶È¸ °¡´ÉÇÑ °æ¿ì¿¡ true, ºÒ°¡´ÉÇÑ °æ¿ì¿¡ false ¹İÈ¯
+	// ì§€ì› ì •ë³´ í†µê³„ ì¡°íšŒ
+	// ì¡°íšŒ ê°€ëŠ¥í•œ ê²½ìš°ì— true, ë¶ˆê°€ëŠ¥í•œ ê²½ìš°ì— false ë°˜í™˜
 	return applyCollection.getApplyStats();
 }

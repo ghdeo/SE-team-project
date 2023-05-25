@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <iostream>
 
@@ -9,5 +9,5 @@ class CancelApplyInfo
 private:
 
 public:
-    bool cancelApplyInfo(string);
+    bool cancelApplyInfo(string);   // 일반 회원의 지원 정보 삭제
 };

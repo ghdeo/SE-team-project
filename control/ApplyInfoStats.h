@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <iostream>
 
@@ -9,5 +9,5 @@ class ApplyInfoStats
 private:
 	
 public:
-	bool showApplyInfoStats();
+	bool showApplyInfoStats();	// 일반 회원의 지원 정보 통계 출력
 };
