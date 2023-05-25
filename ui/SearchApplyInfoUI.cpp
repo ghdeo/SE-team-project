@@ -3,6 +3,17 @@
 #include "SearchApplyInfo.h"
 
 /*
+	함수 이름 : SearchApplyInfoUI
+	기능	  : singleton인 ApplyInfoCollection 주입하는 생성자.
+	전달 인자 : ApplyInfoCollection*
+	반환값    : null
+ */
+SearchApplyInfoUI::SearchApplyInfoUI(ApplyInfoCollection* applyInfoCollection)
+	: searchApplyInfo(applyInfoCollection) {}
+
+
+
+/*
 	함수 이름 : SearchApplyInfoUI::searchApplyInfo()
 	기능	  : 일반 회원의 지원 정보 조회을 위한 UI 제공
 	전달 인자 : 없음

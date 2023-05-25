@@ -2,7 +2,6 @@
 
 #include "ApplyInfoStats.h"
 #include "ApplyCollection.h"
-#include "SessionCollection.h"
 
 /*
 	함수 이름 : ApplyInfoStats::showEmployInfoStats()

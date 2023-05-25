@@ -2,13 +2,13 @@
 #include "ApplyInfo.h"
 
 /*
-	함수 이름 : ApplyInfo::ApplyInfo(string cNum, string bNum, string pos, int eNum, string finDate)
+	함수 이름 : ApplyInfo::ApplyInfo(string cNum, string bNum, string pos, int eNum, string finDate, stirng applycantName)
 	기능	  : Constructor
-	전달 인자 : 없음
+	전달 인자 : 회사명, 사업자번호, 업무, 채용 인원, 마감일, 지원자
 	반환값    : 없음
 */
-ApplyInfo::ApplyInfo(string cNum, string bNum, string pos, int eNum, string finDate)
-	:companyName(cNum), businessNum(bNum), position(pos), employedNum(eNum), finishDate(finDate)
+ApplyInfo::ApplyInfo(string cNum, string bNum, string pos, int eNum, string finDate, stirng applycantName)
+	:companyName(cNum), businessNum(bNum), position(pos), employedNum(eNum), finishDate(finDate), applicantName(applicantName)
 {
 
 }
@@ -57,6 +57,15 @@ int ApplyInfo::getEmployedNum() const { return employedNum; }
 	반환값    : finishDate
 */
 string ApplyInfo::getFinishDate() const { return finishDate; }
+
+/*
+	함수 이름 : ApplyInfo::getApplicantName()
+	기능	  : 지원자명 반환
+	전달 인자 : 없음
+	반환값    : finishDate
+*/
+string ApplyInfo::getApplicantName() const { return applicantName; }
+
 
 /*
 	함수 이름 : ApplyInfo::~ApplyInfo()

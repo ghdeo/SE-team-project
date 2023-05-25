@@ -4,6 +4,16 @@
 #include "ApplyInfoStats.h"
 
 /*
+	함수 이름 : ApplyInfoStatsUI
+	기능	  : singleton인 ApplyInfoCollection 주입하는 생성자.
+	전달 인자 : ApplyInfoCollection*
+	반환값    : null
+ */
+ApplyInfoStatsUI::ApplyInfoStatsUI(ApplyInfoCollection* applyInfoCollection)
+	: selectApplyInfoStats(applyInfoCollection) {}
+
+
+/*
 	함수 이름 : ApplyInfoStatsUI::selectEmployInfoStats()
 	기능	  : 일반 회원의 지원 정보 통계 출력을 위한 UI 제공
 	전달 인자 : 없음
