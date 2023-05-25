@@ -3,12 +3,12 @@
 
 #include <string>
 #include <map>
-#include <Session.h>
+#include "Session.h"
 
 class SessionCollection
 {
 private:
-    std::map<std::string, Session*> sessionList;
+    Session* session;
 
     // singleton instance
     static SessionCollection* instance;
@@ -18,9 +18,9 @@ private:
 
 public:
     static SessionCollection* getInstance();
-    bool createSession(std::string id);
-    bool removeSession(std::string id);
-    Session* getSession(std::string id);
+    void createSession(std::string id);
+    void removeSession();
+    Session* getSession();
 };
 
 #endif

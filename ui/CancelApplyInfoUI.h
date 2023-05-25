@@ -1,11 +1,13 @@
 #include <iostream>
+#include "CancelApplyInfoControl.h"
 
 using namespace std;
 
 class CancelApplyInfoUI
 {
 private:
-
+    CancelApplyInfoControl cancelApplyInfoControl;
 public:
-    bool cancelApplyInfoUI(string);
+    CancelApplyInfoUI(ApplyInfoCollection* applyInfoCollection);
+    string cancelApplyInfoUI(string companyName);
 };

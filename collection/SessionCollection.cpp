@@ -1,8 +1,15 @@
-#include <SessionCollection.h>
-#include <AccountCollection.h>
-#include <GeneralAccount.h>
-#include <CompanyAccount.h>
+#include "SessionCollection.h"
+#include "AccountCollection.h"
+#include "GeneralAccount.h"
+#include "CompanyAccount.h"
 
+SessionCollection* SessionCollection::instance = nullptr;
+/**
+ * 함수 이름 : getInstance
+ * 기능      : 싱글톤 instance 반환
+ * 전달 인자 : null
+ * 반환값    : SessionCollection*
+*/
 SessionCollection* SessionCollection::getInstance() {
     if (instance == nullptr) {
         instance = new SessionCollection();
@@ -11,31 +18,35 @@ SessionCollection* SessionCollection::getInstance() {
     return instance;
 }
 
-bool SessionCollection::createSession(std::string id) {
+/**
+ * 함수 이름 : createSession
+ * 기능      : 세션 생성
+ * 전달 인자 : string
+ * 반환값    : void
+*/
+void SessionCollection::createSession(string id) {
     AccountCollection* accountCollection = AccountCollection::getInstance();
     Account* account = accountCollection->getAccount(id);
-    AccountType accountType;
 
-    if (typeid(*account) == typeid(GeneralAccount)) { // account 종류가 일반 회원일 경우
-        accountType = AccountType::GeneralMember;
-    } else { // account 종류가 회사 회원일 경우
-        accountType = AccountType::CompanyMember;
-    }
-
-
-    Session* session = new Session(id, accountType);
-    sessionList.insert({id, session});
+    session = new Session(id, account);
 }
 
-bool SessionCollection::removeSession(std::string id) {
-    if (sessionList.find(id) != sessionList.end()) {
-        sessionList.erase(id);
-        return true;
-    } else {
-        return false;
-    }
+/**
+ * 함수 이름 : removeSession
+ * 기능      : 세션 삭제
+ * 전달 인자 : null
+ * 반환값    : void
+*/
+void SessionCollection::removeSession() {
+    session = nullptr;
 }
 
-Session* SessionCollection::getSession(std::string id) {
-    return sessionList.find(id)->second;
+/**
+ * 함수 이름 : getSession
+ * 기능      : 세션 반환
+ * 전달 인자 : null
+ * 반환값    : Session*
+*/
+Session* SessionCollection::getSession() {
+    return session;
 }

@@ -1,7 +1,8 @@
 #ifndef REMOVEACCOUNTUI_H
 #define REMOVEACCOUNTUI_H
 
-#include <RemoveAccountControl.h>
+#include "RemoveAccountControl.h"
+using namespace std;
 
 class RemoveAccountUI
 {
@@ -10,7 +11,7 @@ private:
 
 public:
     RemoveAccountUI(AccountCollection* accountCollection);
-    bool requestRemove(std::string id);
+    string requestRemove();
 };
 
 #endif
